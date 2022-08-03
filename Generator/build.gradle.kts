@@ -10,7 +10,7 @@ repositories {
 }
 
 dependencies {
-    implementation("org.ow2.asm", "asm", "9.1")
+    implementation("org.ow2.asm", "asm", "9.3")
 }
 
 tasks.getByName<Test>("test") {

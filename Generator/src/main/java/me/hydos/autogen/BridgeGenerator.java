@@ -12,9 +12,12 @@ import java.util.function.Function;
 import java.util.jar.JarFile;
 
 public class BridgeGenerator {
+    public static final String MC_VERSION = "1.8.9";
+    public static final String MAPPINGS_GROUP = "net.legacyfabric.yarn.1_8_9";
+    public static final String MAPPINGS = "1.8.9+build.382";
 
-    public static final Path MINECRAFT = Paths.get("/home/hydos/.gradle/caches/fabric-loom/21w19a-mapped-net.fabricmc.yarn-21w19a+build.6-v2/minecraft-21w19a-mapped-net.fabricmc.yarn-21w19a+build.6-v2.jar");
-    public static final Path GENERATED_DIR = Paths.get("/home/hydos/IdeaProjects/hYdos/QuiltLangRust/RustBootstrap/src/generated");
+    public static final Path MINECRAFT = Paths.get("/home/arthur/.gradle/caches/fabric-loom/" + MC_VERSION + "/" + MAPPINGS_GROUP + "." + MAPPINGS + "-v2/minecraft-merged-named.jar");
+    public static final Path GENERATED_DIR = Paths.get("./RustBootstrap/src/generated");
 
     public static void main(String[] args) throws IOException {
         visitJar(MINECRAFT, BridgeGenerator::createVisitor);
